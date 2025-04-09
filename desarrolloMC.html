@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Niños</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(fondito.jpg);
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Sour Gummy', sans-serif;
+        }
+        .borde2 {
+            text-align: center;
+            background-color: #a80ed6f3;
+            color: white;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #d95cd9bb;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 100px;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+        header nav ul li {
+            margin: 0 10px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        header nav ul li a:hover {
+            background-color: #ff4b4b;
+        }
+        .contenedor {
+            background-color: #a3cbf0c4;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            background-color: #e9e2e2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        h4 {
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        input {
+            width: 90%;
+            padding: 13px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+            background-color: #f0f8ff;
+        }
+        table {
+            background-color: #a3cbf0c4;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 400px;
+        } 
+        .botones {
+            width: 40%;
+            background: #147fe4;
+            border: none;
+            padding: 10px;
+            color: white;
+            margin: 16px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Sour Gummy', sans-serif;
+        }
+        button:hover {
+            background-color: #662b59;
+        }
+        .mensaje-exito {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="borde2">ICBF-CONECTA</div>
+    <header>
+        <img src="logoSinFondo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="PaginaMC.html"><i class="fas fa-home"></i> Página Principal</a></li>
+                <li><a href="matriculas.html"><i class="fas fa-user-graduate"></i> Matrícula</a></li>
+                <li><a href="Planeaciones.html"><i class="fas fa-book"></i> Planeaciones</a></li>
+                <li><a href="desarrolloMC.html"><i class="fas fa-child"></i> Desarrollo Niños</a></li>
+                <li><a href="notificaciones.html"><i class="fas fa-bell"></i> Notificaciones</a></li>
+                <li><a href="InterfazInicio.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+                <li><a href="http://localhost/errores/index.html"><i class="fas fa-cogs"></i></a></li>
+            </ul> 
+        </nav> 
+    </header>
+    
+    <div class="contenedor">
+        <div class="mensaje-exito" id="mensajeExito">¡Registro exitoso!</div>
+        <h1>Seguimiento Al Desarrollo</h1>
+        <h2>Datos del niños</h2>
+        <form id="datosniños">
+            <h4>Nombres y Apellidos del niño</h4>
+            <input type="text" name="nombres" id="nombre" placeholder="Nombres" required>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+            <h4>Edad</h4>
+            <input type="text" name="edad" id="edad" required><br>
+            <h4>Nombre Tutor</h4>
+            <input type="text" name="nombreT" id="nombreT"><br>
+            <h4>Fecha de Registro</h4>
+            <input type="date" name="fecha" id="fecha" required>
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><h2>Registro de Comportamiento</h2></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><textarea required placeholder="Detalles del comportamiento del niño"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="botones" type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('datosniños').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const mensajeExito = document.getElementById('mensajeExito');
+            mensajeExito.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+                mensajeExito.style.display = 'none';
+            }, 5000);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

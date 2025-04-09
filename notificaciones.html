@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url(fondito.jpg);
+            margin: 0;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Sour Gummy', sans-serif;
+        }
+        .borde2 {
+            text-align: center;
+      background-color: #a80ed6f3;
+      color: white;
+      padding: 10px 0;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #d95cd9bb;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 100px;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+        header nav ul li {
+            margin: 0 10px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        header nav ul li a:hover {
+            background-color: #ff4b4b;
+        }
+        .contenedor {
+            display: flex;
+            margin: 20px;
+        }
+        form{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+        }
+        form:hover {
+            background-color: rgba(255, 255, 255, 0.664);
+        }
+        h4{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        h1{
+            font-size: 30px;
+        }
+        .columna1 {
+            width: 28%;
+        }
+        .columna2{
+            width: 60%;
+        }
+        input{
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        } 
+        input:focus{
+            border-color: #520852;
+            outline: none;
+            background-color: #f0f8ff;
+        }
+        .columna2 {
+            padding-left: 25px;
+        }
+        .card {
+            background-color: #e92fe96b;
+            padding: 20px;
+            margin-top: 20px;
+            border-style: inset;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #e90090;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 40%;
+            margin: 20px;
+        }
+        button:hover{
+            background-color: #662b59;
+        }
+        .card ul{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            color: black;
+            font-size: 25px;
+            list-style: none;
+        }
+        .card ul:hover{
+            background-color: rgba(255, 255, 255, 0.664);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="borde2">ICBF-CONECTA</div>
+    <header>
+        <img src="logoSinFondo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="PaginaMC.html"><i class="fas fa-home"></i> Página Principal</a></li>
+                <li><a href="matriculas.html"><i class="fas fa-user-graduate"></i> Matrícula</a></li>
+                <li><a href="Planeaciones.html"><i class="fas fa-book"></i> Planeaciones</a></li>
+                <li><a href="desarrolloMC.html"><i class="fas fa-child"></i> Desarrollo Niños</a></li>
+                <li><a href="notificaciones.html"><i class="fas fa-bell"></i> Notificaciones</a></li>
+                <li><a href="InterfazInicio.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <div class="columna1">
+            <div class="card">
+                <h1>Programar Notificación</h1>
+                <form id="notificacionForm">
+                    <h4>Descripción</h4>
+                    <input type="text" id="notificacion" required><br>
+                    <h4>Fecha de Notificación</h4>
+                    <input type="date" id="fecha" required><br>
+                    <h4>Hora de Notificación</h4>
+                    <input type="time" id="hora" required><br><br>
+                    <button class="botones" type="submit">Programar</button>
+                </form>
+            </div>
+        </div>
+        <div class="columna2">
+            <div class="card">
+                <h1>Notificaciones Programadas</h1>
+                <ul id="listaNotificaciones"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+
+        document.addEventListener("DOMContentLoaded", mostrarNotificaciones);
+        document.getElementById("notificacionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const mensaje = document.getElementById("notificacion").value;
+            const fecha = document.getElementById("fecha").value;
+            const hora = document.getElementById("hora").value;
+
+            const fechaHora = new Date(`${fecha}T${hora}`);
+            const tiempoRestante = fechaHora.getTime() - Date.now();
+
+            if (tiempoRestante > 0) {
+                const nuevaNotificacion = { mensaje, fecha, hora };
+                guardarNotificacion(nuevaNotificacion);
+                mostrarNotificaciones();
+
+                setTimeout(() => {
+                    new Notification("¡Recordatorio!", { body: mensaje });
+                    eliminarNotificacion(mensaje, fecha, hora);
+                    mostrarNotificaciones();
+                }, tiempoRestante);
+
+                alert("Notificación programada.");
+            } else {
+                alert("La fecha y hora deben ser futuras.");
+            }
+        });
+
+        function guardarNotificacion(notificacion) {
+            let notificaciones = JSON.parse(localStorage.getItem("notificaciones")) || [];
+            notificaciones.push(notificacion);
+            localStorage.setItem("notificaciones", JSON.stringify(notificaciones));
+        }
+
+        function mostrarNotificaciones() {
+            const lista = document.getElementById("listaNotificaciones");
+            lista.innerHTML = "";
+            const notificaciones = JSON.parse(localStorage.getItem("notificaciones")) || [];
+            notificaciones.forEach(notificacion => {
+                const item = document.createElement("li");
+                item.textContent = `${notificacion.mensaje} - ${notificacion.fecha} ${notificacion.hora}`;
+                const btnEliminar = document.createElement("button");
+                btnEliminar.textContent = "Eliminar";
+                btnEliminar.onclick = () => {
+                    eliminarNotificacion(notificacion.mensaje, notificacion.fecha, notificacion.hora);
+                    mostrarNotificaciones();
+                };
+                item.appendChild(btnEliminar);
+                lista.appendChild(item);
+            });
+        }
+
+        function eliminarNotificacion(mensaje, fecha, hora) {
+            let notificaciones = JSON.parse(localStorage.getItem("notificaciones")) || [];
+            notificaciones = notificaciones.filter(n => n.mensaje !== mensaje || n.fecha !== fecha || n.hora !== hora);
+            localStorage.setItem("notificaciones", JSON.stringify(notificaciones));
+        }
+    </script>
+</body>
+</html>

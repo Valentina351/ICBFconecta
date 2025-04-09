@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal - Software Madres Comunitarias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+   
+    body {
+      font-family:'Sour Gummy', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(fondito.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 30vh;
+      color: #333;
+    }
+
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #d95cd9bb;
+      padding: 10px 20px;
+      color: rgb(243, 234, 234);
+    }
+
+    .header img {
+      height: 100px;
+    }
+
+    
+    .titulo-principal {
+      text-align: center;
+      background-color: #a80ed6f3;
+      color: white;
+      padding: 10px 0;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+   
+    .menu {
+      list-style:none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      color: rgb(252, 252, 252);
+    }
+
+    .menu li {
+      display: inside;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      padding: 10px 15px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: rgba(255, 0, 0, 0.692);
+      border-radius: 5px;
+    }
+    .contenedor {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin: 40px auto; 
+    max-width: 1200px; 
+    gap: 20px; 
+  }
+  .contenido2{
+      flex: 0 0 28%;
+      margin: 50px auto;
+      background: rgba(242, 243, 248, 0.76);
+      padding: 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(255, 2, 2, 0.877);
+    
+  }
+    .contenido {
+      flex:1;
+      margin: 50px auto;
+      background: rgba(99, 126, 247, 0.76);
+      padding: 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.877); 
+    }
+    
+    
+    .contenido3{
+      flex: 0 0 28%;
+      margin: 50px auto;
+      background: rgba(242, 243, 248, 0.76);
+      padding: 25px;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(250, 0, 0, 0.877);
+    }
+
+    .welcome {
+      text-align: center;
+    }
+
+    .welcome h2 {
+      color: #faf9fa;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align:justify;
+    }
+
+    .info p {
+      margin: 15px 0;
+      text-align: justify;
+    }
+
+    .asistencia-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn-asistencia {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #da47ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-asistencia input {
+      padding: 8px;
+      border: 1px solid #cf0bd6;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    
+  </style>
+</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<body>
+  <div class="titulo-principal">
+    ICBF-CONECTA
+  </div>
+
+  <header class="header">
+    <img src="logoSinFondo.png" alt="Logo del Software">
+    <nav>
+      <ul class="menu">
+        <li><a href="PaginaMC.html"><i class="fas fa-home"></i> Página Principal</a></li>
+        <li><a href="matriculas.html"><i class="fas fa-user-graduate"></i> Matrícula</a></li>
+        <li><a href="Planeaciones.html"><i class="fas fa-book-open"></i> Planeaciones</a></li>
+        <li><a href="desarrolloMC.html"><i class="fas fa-child"></i> Desarrollo Niños</a></li>
+        <li><a href="notificaciones.html"><i class="fas fa-bell"></i> Notificaciones</a></li>
+        <li><a href="InterfazInicio.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+
+    </ul>
+    
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="contenido2">
+    <div class="info">
+      <H2>Derechos de los niños</H2>
+      <ul>
+        <li>El derecho a la igualdad.</li>
+        <li>A la protección especial para su desarrollo físico material y social.</li>
+        <li>A un nombre y una nacionalidad.</li>
+        <li>A una alimentación, vivienda y atención adecuadas para el niño y la madre.</li>
+        <li>A la educación y cuidados especiales para el niño con alguna discapacidad.</li>
+        <li>A recibir educación gratuita y a jugar.</li>
+        <li>A ser el primero en recibir ayuda en casos de desastre.</li>
+        <li>A ser protegido contra el abandono y la explotación del trabajo.</li>
+        <li>A formarse en un espíritu de solidaridad, comprensión, tolerancia, amistad, justicia y paz entre los pueblos.</li>
+      </ul>
+  </div>
+   <img src="derechosNiños-removebg-preview.png" alt="mundo con niñios al rededor tomados de la mano"width="315" height="315">
+  </div>
+  <div class="contenido">
+    <div class="welcome">
+      <h2>¡Te damos la bienvenida! <br> Madre Comunitaria</h2>
+      <div class="asistencia-container">
+       <a href="llamadaAsistencia.html" class="btn-asistencia">Llamar Asistencia</a>
+    </div>
+    </div>
+  </div>
+  <div class="contenido3">
+    <div class="info">
+      <h2>Deberes de los niños</h2>
+      <ul>
+          <li>Debemos respetar a nuestros semejantes, 
+            sin importar su sexo, nivel socioeconómico, religión, nacionalidad o 
+            sus impedimentos físicos y mentales.</li>
+          <li>Debemos respetar a nuestros padres, maestros y a todas las personas,
+             pues entre todos nos ayudan a encontrar 
+            el camino que conduce de la infancia a la vida adulta.</li>
+          <li>Debemos aprender a respetar las opiniones y costumbres de 
+            los demás, aunque no sean iguales a las nuestras.</li>
+          <li>Debemos respetar las leyes que rigen la sociedad, tener 
+            buena conducta en la escuela y portarnos bien en casa </li>
+          <li>Debemos respetarnos a nosotros mismos. Nuestro cuerpo, nuestro pensamiento 
+              y nuestros sentimientos son lo más importante que tenemos.</li>
+          <li>Debemos hablar siempre con la verdad y cumplir lo que prometemos</li>        
+      </ul>
+      <img src="niños-removebg-preview.png" alt="niños sonriendo"width="250" height="220" >
+  </div>
+  </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Playwrite+HR+Lijeva:wght@100..400&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+body {
+    background-image: url(fondito.jpg);
+            margin: 0;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Sour Gummy', sans-serif;
+    }
+
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #d95cd9bb;
+      padding: 10px 20px;
+      color: rgb(243, 234, 234);
+    }
+
+    .header img {
+      height: 100px;
+    }
+
+    input {
+            width:80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    .titulo-principal {
+      text-align: center;
+      background-color: #a80ed6f3;
+      color: white;
+      padding: 10px 0;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+   
+    .menu {
+      list-style:none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      color: rgb(252, 252, 252);
+    }
+
+    .menu li {
+      display: inside;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      padding: 10px 15px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: rgba(255, 0, 0, 0.692);
+      border-radius: 5px;
+    }
+    h1, h2 {
+            text-align: center;
+            color: #0926a7;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #8773fa;
+            color: white;
+        }
+
+        td textarea, td input {
+            width: 100%;
+            font-size: 14px;
+            border: 1px solid #080808;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        td textarea {
+            resize: vertical;
+            height: 60px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            color: #2b01e6;
+            font-size: 150%;
+        }
+
+        .signature-section {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature-section div {
+            width: 45%;
+            text-align: center;
+        }
+
+        .signature-section input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #1825d6;
+            text-align: center;
+        }
+        .mensaje-exito {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .btn-guardar:hover {
+         background-color: #bc11f0;
+          }
+        .btn-guardar {
+           background-color: #070be7;
+           color: white;
+           border: none;
+           padding: 20px 15px;
+           margin-top: 10px;
+           margin-left: 560px;
+           font-size: 16px;
+           border-radius: 5px;
+           cursor: pointer;
+          
+          }
+    </style>
+</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<body>
+    <div class="titulo-principal">
+        ICBF-CONECTA
+      </div>
+    <header class="header">
+        <img src="logoSinFondo.png" alt="Logo del Software">
+        <nav>
+    <ul class="menu">
+          <li><a href="PaginaMC.html"><i class="fas fa-home"></i> Página Principal</a></li>
+          <li><a href="matriculas.html"><i class="fas fa-user-graduate"></i> Matrícula</a></li>
+          <li><a href="Planeaciones.html"><i class="fas fa-book"></i> Planeaciones</a></li>
+          <li><a href="desarrolloMC.html"><i class="fas fa-child"></i> Desarrollo Niños</a></li>
+          <li><a href="notificaciones.html"><i class="fas fa-bell"></i> Notificaciones</a></li>
+          <li><a href="InterfazInicio.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+    </ul>
+        </nav>
+    </header> 
+    <div class="register">
+        <div class="mensaje-exito" id="mensajeExito">
+            ¡Registro exitoso!
+        </div>
+<form id="form" action="#" method="post">
+    <div class="header">
+        <h1>PLANEACIÓN PEDAGÓGICA, MIS PRIMEROS SUEÑOS</h1>
+           <p><strong>Fecha:</strong> <input type="date"  required="dia_mes_año" /></p>
+           <p><strong>Nombre Actividad</strong> <input type="text" required  placeholder="nombre de su actividad" /></p>
+           <p><strong>Intencionalidad Pedagógica:</strong> <input type="text" required placeholder=" Objetivo de la actividad" /></p>
+
+    </div>
+    
+     <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Materiales a Utilizar</th>
+                    <th>Ambientacion</th>
+                    <th>Actividad de inicio</th>
+                    <th>Desarrollo de la actividad</th>
+                    <th>Cierre de la actividad</th>
+                    <th>Documentación </th>
+                    <th>Observacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><textarea required placeholder="Materiales a utilizar "></textarea></td>
+                    <td><textarea required placeholder="Como va a ambientar el aula"></textarea></td>
+                    <td><textarea required placeholder="Describa la actividad de inicio"></textarea></td>
+                    <td><textarea required placeholder="Describa el desarrollo de la actividad"></textarea></td>
+                    <td><textarea required placeholder="Describa la actividad de cierre"></textarea></td>
+                    <td><textarea required placeholder="Como docuemntará la actuvidad"></textarea></td>
+                    <td><textarea required placeholder="Situaciones observadas para el seguimientos de los niños y niñas"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+       <button type="submit" class="btn-guardar">Guardar Planeación</button>
+</form>
+
+    <script>
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const mensajeExito = document.getElementById('mensajeExito');
+            mensajeExito.style.display = 'block';
+            mensajeExito.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                mensajeExito.style.display = 'none';
+            }, 5000);
+            this.reset();
+        });
+        </script>
+</body>
+</html>
